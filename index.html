@@ -1180,21 +1180,21 @@ nav a:hover {
 
   position: absolute;
 
-  inset: 0;
+  left: 0;
+  top: 0;
 
   width: 100%;
 
-  height: 100%;
+  /* Make image slightly taller than its frame */
+  height: 104%;
 
   object-fit: cover;
 
-  /* Slightly enlarge the image so the patterned
-     bottom edge is cropped out */
-  transform: scale(1.035);
+  /* Anchor image to the top so the unwanted
+     black-and-white strip falls below the frame */
+  object-position: center top;
 
-  transform-origin: center center;
-
-  object-position: center center;
+  transform: none;
 
 }
 
