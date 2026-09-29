@@ -699,17 +699,19 @@ nav a:hover {
 
   row-gap: clamp(38px, 4vw, 56px);
 
-  /* Keep the smaller image sizing */
+  /*
+    Keep the smaller desktop grid,
+    but preserve the same left gutter as 03 + heading.
+  */
   width: calc(100% - 16vw);
 
-  max-width: 1080px;
+  max-width: 1224px;
 
-  /* Align first image with 03 · THE CLUB */
   margin-left: 0;
 
   margin-right: auto;
 
-  padding-left: 0;
+  padding-left: clamp(20px, 4.5vw, 72px);
 
   padding-right: 0;
 
