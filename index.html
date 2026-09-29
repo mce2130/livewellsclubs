@@ -1915,19 +1915,25 @@ transform: scale(1.07);
 
   .hero-intro {
 
-    display: block;
+  display: block;
 
-    margin: 24px 0 26px;
+  margin: 20px 0 24px;
 
-    max-width: 100%;
+  max-width: none;
 
-    font-size: 16px;
+  width: 100%;
 
-    line-height: 1.5;
+  font-size: clamp(11px, 2.85vw, 13px);
 
-    color: rgba(244,239,231,.94);
+  line-height: 1.55;
 
-  }
+  letter-spacing: -0.01em;
+
+  white-space: nowrap;
+
+  color: rgba(244,239,231,.94);
+
+}
 
 
   .hero-ctas {
