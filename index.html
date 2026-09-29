@@ -1691,41 +1691,54 @@ footer a:hover {
 }
 
 
-/* =========================================================
-   MOBILE
-   SAME BREAKPOINT AS EXPEDITIONS
-   ========================================================= */
+/* =====================================================
+   MOBILE NAV — CLEANER, LIKE EXPEDITIONS
+   ===================================================== */
+
+nav {
+
+  padding-top: 34px !important;
+
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+
+  align-items: center !important;
+
+}
 
 
-@media (max-width: 760px) {
+nav .brand {
+
+  font-size: 11px !important;
+
+  letter-spacing: .30em !important;
+
+}
 
 
-  html,
-  body {
+nav .links {
 
-    width: 100%;
+  display: flex !important;
 
-    max-width: 100%;
-
-    overflow-x: hidden;
-
-  }
+}
 
 
-  .w {
+nav .links a:not(.apply) {
 
-    padding-left: 20px;
+  display: none !important;
 
-    padding-right: 20px;
-
-  }
+}
 
 
-  body {
+nav .apply {
 
-    font-size: 16px;
+  padding: 8px 12px !important;
 
-  }
+  font-size: 10px !important;
+
+  letter-spacing: .25em !important;
+
+}
 
 
   /* =====================================================
