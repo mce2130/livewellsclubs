@@ -1,491 +1,1498 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Livewells Clubs</title>
-<meta name="description" content="A private members' club woven into a city's finest residential buildings.">
+
+<meta
+  name="description"
+  content="A private members' club woven into a city's finest residential buildings."
+>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500&display=swap">
+
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Barlow+Condensed:wght@400;500;600&family=Barlow:wght@400;500&display=swap"
+>
+
 
 <style>
 
 /* =========================================================
-   GLOBAL
-========================================================= */
+   LIVEWELLS CLUBS
+   RESPONSIVE SYSTEM BASED ON LIVEWELLS EXPEDITIONS
+   ========================================================= */
 
-html {
-  scroll-behavior: smooth;
+
+:root {
+
+  --paper: #E9E3D8;
+
+  --paper-light: #F4EFE7;
+
+  --ink: #1C1F22;
+
+  --ink-soft: #4E4A45;
+
+  --rust: #A8643F;
+
+  --rust-dark: #8E5233;
+
+  --green: #3E4F3F;
+
+  --line: #C9C0B2;
+
+  --serif: "EB Garamond", serif;
+
+  --condensed: "Barlow Condensed", sans-serif;
+
+  --body: "Barlow", sans-serif;
+
 }
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
 
 * {
   box-sizing: border-box;
 }
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+html,
 body {
+
   margin: 0;
-  background: #E9E3D8;
-  color: #1C1F22;
-  font-family: Barlow, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
+
+  width: 100%;
+
+  background: var(--paper);
+
+  color: var(--ink);
+
+  font-family: var(--body);
+
   -webkit-font-smoothing: antialiased;
+
 }
 
-a {
-  color: inherit;
-  text-underline-offset: 4px;
+
+body {
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  overflow-x: hidden;
+
 }
 
-a:hover {
-  color: #A8643F;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 2px solid #A8643F;
-  outline-offset: 2px;
-}
-
-::selection {
-  background: #A8643F;
-  color: #F4EFE7;
-}
 
 img {
+
   display: block;
+
+  max-width: 100%;
+
 }
 
-.pad {
-  padding-left: clamp(20px, 5vw, 64px);
-  padding-right: clamp(20px, 5vw, 64px);
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
 }
 
-.wrap {
-  max-width: 1320px;
+
+a:hover {
+
+  color: var(--rust);
+
+}
+
+
+::selection {
+
+  background: var(--rust);
+
+  color: var(--paper-light);
+
+}
+
+
+/* =========================================================
+   GLOBAL WIDTH SYSTEM
+   MATCHES EXPEDITIONS
+   ========================================================= */
+
+
+.w {
+
+  width: 100%;
+
+  max-width: none;
+
   margin: 0 auto;
+
+  padding-left: clamp(20px, 4.5vw, 72px);
+
+  padding-right: clamp(20px, 4.5vw, 72px);
+
+  box-sizing: border-box;
+
 }
 
-.caps {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  letter-spacing: .42em;
+
+.content-width {
+
+  width: 100%;
+
+  max-width: 1160px;
+
+  margin-left: auto;
+
+  margin-right: auto;
+
 }
 
-.kick {
-  color: #7E4A2E;
+
+.k {
+
+  font-family: var(--condensed);
+
+  text-transform: uppercase;
+
+  letter-spacing: .28em;
+
+  font-size: clamp(11px, 1.15vw, 14px);
+
 }
+
 
 .serif {
-  font-family: 'EB Garamond', serif;
+
+  font-family: var(--serif);
+
   font-weight: 400;
+
 }
 
-.h2 {
-  font-family: 'EB Garamond', serif;
-  font-weight: 400;
-  line-height: 1.02;
-  margin: 24px 0 0;
-}
-
-.block {
-  display: block;
-}
 
 .photo {
-  filter: saturate(.85) sepia(.12) brightness(.95);
+
+  filter:
+    saturate(.85)
+    sepia(.10)
+    brightness(.96);
+
 }
 
-.body19 {
-  margin: 0;
-  font-size: 19px;
-  line-height: 1.5;
-  text-wrap: pretty;
+
+.rule {
+
+  height: 1px;
+
+  width: 100%;
+
+  background: var(--line);
+
 }
 
 
 /* =========================================================
    BUTTONS
-========================================================= */
+   ========================================================= */
+
 
 .btn {
-  display: inline-block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 14px;
-  letter-spacing: .34em;
-  text-decoration: none;
-  padding: 16px 28px;
-  background: #A8643F;
-  color: #F4EFE7;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  background: var(--rust);
+
+  color: var(--paper-light);
+
+  font-family: var(--condensed);
+
+  text-transform: uppercase;
+
+  letter-spacing: .20em;
+
+  font-size: clamp(13px, 1.25vw, 16px);
+
+  padding:
+    clamp(15px, 1.4vw, 20px)
+    clamp(22px, 2.6vw, 38px);
+
+  border: 0;
+
+  cursor: pointer;
+
 }
+
 
 .btn:hover {
-  background: #8E5233;
-  color: #F4EFE7;
+
+  background: var(--rust-dark);
+
+  color: var(--paper-light);
+
 }
+
 
 .btn-dark {
-  background: #1C1F22;
+
+  background: var(--ink);
+
 }
+
 
 .btn-dark:hover {
-  background: #A8643F;
+
+  background: var(--rust);
+
 }
+
 
 .line-link {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 14px;
-  letter-spacing: .34em;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
+
+  display: inline-block;
+
+  font-family: var(--condensed);
+
+  text-transform: uppercase;
+
+  letter-spacing: .24em;
+
+  font-size: clamp(12px, 1.05vw, 14px);
+
   padding-bottom: 4px;
-}
 
+  border-bottom: 1px solid currentColor;
 
-/* =========================================================
-   GENERAL LAYOUT
-========================================================= */
-
-.split {
-  border-top: 1px solid #C9C0B2;
-  padding-top: 32px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px clamp(56px, 7vw, 112px);
-  align-items: start;
-}
-
-.two {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(100%, 380px), 1fr)
-  );
 }
 
 
 /* =========================================================
    NAVIGATION
-========================================================= */
+   ========================================================= */
+
 
 nav {
+
   position: absolute;
+
+  z-index: 10;
+
   top: 0;
+
   left: 0;
+
   right: 0;
-  z-index: 5;
+
+  width: 100%;
+
+  padding-top: clamp(26px, 3.2vw, 48px);
 
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
 
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 30px;
 
-  padding-top: 24px;
-  padding-bottom: 24px;
+  color: var(--paper-light);
 
-  color: #F4EFE7;
+  font-family: var(--condensed);
 
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  letter-spacing: .36em;
+  text-transform: uppercase;
+
+  letter-spacing: .30em;
+
+  font-size: clamp(11px, 1vw, 14px);
+
 }
 
-nav a {
-  text-decoration: none;
+
+nav .brand {
+
+  white-space: nowrap;
+
+  letter-spacing: .38em;
+
 }
+
 
 nav .links {
+
   display: flex;
-  gap: clamp(16px, 3vw, 36px);
-  flex-wrap: wrap;
+
   align-items: center;
+
+  gap: clamp(22px, 3vw, 46px);
+
 }
+
 
 nav .apply {
-  border: 1px solid rgba(244,239,231,.6);
-  padding: 9px 16px;
+
+  border: 1px solid rgba(244,239,231,.65);
+
+  padding: 10px 18px;
+
 }
 
-nav .apply:hover {
-  background: #F4EFE7;
-  color: #1C1F22;
+
+nav a:hover {
+
+  color: var(--paper-light);
+
+  opacity: .7;
+
 }
 
 
 /* =========================================================
-   HERO
-========================================================= */
+   01 — HERO
+   DESKTOP USES SAME 3:2 SYSTEM AS EXPEDITIONS
+   ========================================================= */
 
-header {
+
+#hero {
+
   position: relative;
 
-  /* Match the taller editorial composition of the design */
-  min-height: 0;
-  height: auto;
-  aspect-ratio: 1.22 / 1;
+  width: 100%;
 
-  background: #1C1F22;
-  color: #F4EFE7;
+  height: auto;
+
+  min-height: 0;
+
+  aspect-ratio: 3 / 2;
 
   overflow: hidden;
 
-  display: flex;
-  align-items: flex-end;
+  display: block;
+
+  margin: 0;
+
+  padding: 0;
+
+  background: var(--ink);
+
+  color: var(--paper-light);
+
 }
 
-header .bg {
+
+#hero > img {
+
   position: absolute;
+
   inset: 0;
 
   width: 100%;
+
   height: 100%;
+
+  max-width: none;
 
   object-fit: cover;
 
-  /* Match the reference image framing */
-  object-position: 50% 50%;
+  object-position: center center;
 
-  filter:
-    saturate(.85)
-    sepia(.12)
-    brightness(.9);
 }
 
-header .fade {
+
+.hero-veil {
+
   position: absolute;
+
   inset: 0;
+
+  z-index: 1;
 
   background:
     linear-gradient(
-      to top,
-      rgba(22,20,18,.82) 0%,
-      rgba(22,20,18,.35) 45%,
-      rgba(22,20,18,.25) 100%
+      to bottom,
+      rgba(20,20,18,.20) 0%,
+      rgba(20,20,18,.08) 25%,
+      rgba(20,20,18,.18) 50%,
+      rgba(20,20,18,.48) 75%,
+      rgba(20,20,18,.88) 100%
     );
+
 }
 
-header .inner {
-  position: relative;
+
+.hero-content {
+
+  position: absolute;
+
+  inset: 0;
+
   z-index: 2;
+
+  padding:
+    clamp(110px, 11vw, 180px)
+    clamp(38px, 4.5vw, 72px)
+    clamp(52px, 6vw, 96px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+}
+
+
+.hero-lower {
 
   width: 100%;
 
-  padding-bottom: clamp(54px, 6vw, 86px);
-
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
-header h1 {
-  font-family: 'EB Garamond', serif;
+
+.hero-kicker {
+
+  margin-bottom: clamp(22px, 2.5vw, 36px);
+
+  color: rgba(244,239,231,.90);
+
+}
+
+
+.hero-title {
+
+  margin: 0;
+
+  max-width: 1400px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(58px, 7vw, 112px);
+
   font-weight: 400;
 
-  /*
-     Important:
-     the reference headline is large,
-     but not as oversized as the current live site.
-  */
-  font-size: clamp(54px, 6.25vw, 102px);
+  line-height: .91;
+
+  letter-spacing: -.012em;
+
+  color: var(--paper-light);
+
+}
+
+
+.hero-title em {
+
+  font-weight: 400;
+
+}
+
+
+.hero-intro {
+
+  margin:
+    clamp(26px, 3vw, 44px)
+    0
+    clamp(26px, 3vw, 42px);
+
+  max-width: 1000px;
+
+  font-size: clamp(16px, 1.35vw, 21px);
+
+  line-height: 1.55;
+
+  color: rgba(244,239,231,.92);
+
+}
+
+
+.hero-ctas {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: clamp(24px, 3vw, 44px);
+
+}
+
+
+/* =========================================================
+   02 — READ THIS FIRST
+   ========================================================= */
+
+
+#read-first {
+
+  background: var(--paper);
+
+}
+
+
+.read-inner {
+
+  padding-top: clamp(70px, 9vw, 130px);
+
+  padding-bottom: clamp(75px, 9vw, 135px);
+
+}
+
+
+.section-title {
+
+  margin:
+    clamp(20px, 2.5vw, 34px)
+    0
+    0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(46px, 7vw, 100px);
+
+  font-weight: 400;
+
   line-height: .94;
 
   letter-spacing: -.015em;
 
+}
+
+
+.section-title em {
+
+  font-weight: 400;
+
+}
+
+
+.intro-split {
+
+  display: grid;
+
+  grid-template-columns: .9fr 1.1fr;
+
+  gap: clamp(50px, 8vw, 120px);
+
+  align-items: start;
+
+  margin-top: clamp(42px, 5vw, 72px);
+
+  padding-top: clamp(30px, 3vw, 44px);
+
+  border-top: 1px solid var(--line);
+
+}
+
+
+.intro-statement {
+
   margin: 0;
 
-  max-width: 1220px;
+  font-family: var(--serif);
 
-  text-wrap: balance;
+  font-size: clamp(27px, 2.5vw, 36px);
+
+  line-height: 1.38;
+
+}
+
+
+.intro-copy {
+
+  max-width: 560px;
+
+}
+
+
+.intro-copy p {
+
+  margin: 0 0 20px;
+
+  font-size: clamp(17px, 1.45vw, 20px);
+
+  line-height: 1.55;
+
+}
+
+
+.intro-copy p:last-child {
+
+  margin-bottom: 0;
+
+  color: #6B645B;
+
 }
 
 
 /* =========================================================
-   THE CLUB
-========================================================= */
+   03 — THE CLUB
+   ========================================================= */
+
+
+#club {
+
+  background: var(--paper);
+
+  border-bottom: 1px solid rgba(28,31,34,.12);
+
+}
+
+
+.club-heading {
+
+  padding-bottom: clamp(30px, 4vw, 52px);
+
+}
+
+
+.club-heading h2 {
+
+  margin: clamp(18px, 2vw, 28px) 0 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(42px, 5vw, 70px);
+
+  line-height: 1;
+
+  font-weight: 400;
+
+}
+
 
 .rooms {
+
   display: grid;
+
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  gap: 40px 20px;
+  column-gap: clamp(28px, 3vw, 42px);
+
+  row-gap: clamp(38px, 4vw, 56px);
+
+  width: 100%;
+
+  padding-bottom: clamp(70px, 9vw, 130px);
+
 }
+
 
 .room {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+
+  min-width: 0;
+
 }
 
-.room .frame {
+
+.room-frame {
+
   position: relative;
 
-  aspect-ratio: 4 / 5;
+  width: 100%;
 
-  background: #D9D2C6;
+  aspect-ratio: 3 / 4;
 
   overflow: hidden;
+
+  background: #D8D1C5;
+
 }
 
-.room img {
+
+.room-frame img {
+
   position: absolute;
+
   inset: 0;
 
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
+
 }
 
-.room .name {
-  font-family: 'Barlow Condensed', sans-serif;
 
-  font-size: 14px;
+.room-name {
 
-  letter-spacing: .42em;
+  margin-top: 16px;
+
+  font-family: var(--condensed);
+
+  text-transform: uppercase;
+
+  letter-spacing: .30em;
+
+  font-size: clamp(12px, 1.1vw, 14px);
+
 }
+
 
 .room p {
+
+  margin: 8px 0 0;
+
+  max-width: 330px;
+
+  color: var(--ink-soft);
+
+  font-size: clamp(15px, 1.2vw, 17px);
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   04 — MEMBERSHIP
+   ========================================================= */
+
+
+#membership {
+
+  background: var(--ink);
+
+  color: var(--paper-light);
+
+}
+
+
+.membership-inner {
+
+  padding-top: clamp(70px, 9vw, 130px);
+
+  padding-bottom: clamp(80px, 9vw, 140px);
+
+}
+
+
+.membership-title {
+
+  margin:
+    clamp(20px, 2.5vw, 34px)
+    0
+    clamp(44px, 5vw, 70px);
+
+  max-width: 950px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(46px, 6vw, 86px);
+
+  line-height: .96;
+
+  font-weight: 400;
+
+}
+
+
+.membership-title em {
+
+  font-weight: 400;
+
+}
+
+
+.membership-intro {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: clamp(50px, 8vw, 120px);
+
+  padding-top: clamp(30px, 3vw, 44px);
+
+  border-top: 1px solid rgba(244,239,231,.24);
+
+}
+
+
+.membership-intro h3 {
+
   margin: 0;
 
-  font-size: 16px;
+  font-family: var(--serif);
 
-  color: #4E4A45;
+  font-size: clamp(30px, 3vw, 42px);
+
+  line-height: 1.15;
+
+  font-weight: 400;
+
+}
+
+
+.membership-intro h3 em {
+
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: .78em;
+
+  color: #E4DDD2;
+
+}
+
+
+.membership-copy {
+
+  max-width: 560px;
+
+}
+
+
+.membership-copy p {
+
+  margin: 0 0 20px;
+
+  font-size: clamp(17px, 1.4vw, 20px);
+
+  line-height: 1.55;
+
+}
+
+
+.membership-copy p:nth-child(2) {
+
+  color: #C9C2B7;
+
+}
+
+
+.membership-note {
+
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(244,239,231,.15);
+
+  color: #9C958A !important;
+
+  font-size: 14px !important;
+
 }
 
 
 /* =========================================================
    DAY AT THE CLUB
-========================================================= */
+   ========================================================= */
+
+
+.day-wrap {
+
+  margin-top: clamp(60px, 7vw, 100px);
+
+}
+
 
 .day {
+
   display: grid;
 
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(min(100%, 140px), 1fr)
-    );
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 
-  gap: 28px 20px;
+  gap: clamp(18px, 2vw, 30px);
+
+  margin-top: 24px;
+
 }
 
-.day > div {
-  border-top:
-    1px solid rgba(244,239,231,.4);
+
+.day-item {
 
   padding-top: 16px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  border-top: 1px solid rgba(244,239,231,.35);
+
 }
 
-.day .t {
-  font-family: 'Barlow Condensed', sans-serif;
+
+.day-time {
+
+  font-family: var(--condensed);
+
+  letter-spacing: .26em;
 
   font-size: 13px;
-  letter-spacing: .3em;
 
   color: #D9B89E;
-}
 
-.day .h {
-  font-family: 'EB Garamond', serif;
-
-  font-size: 26px;
-
-  line-height: 1.1;
-}
-
-.day .l {
-  font-size: 15px;
-
-  color: #C9C2B7;
 }
 
 
-/* =========================================================
-   MEMBERSHIP
-========================================================= */
+.day-title {
 
-.person .h {
-  font-family: 'EB Garamond', serif;
+  margin-top: 8px;
 
-  font-size: clamp(28px, 3vw, 38px);
+  font-family: var(--serif);
+
+  font-size: clamp(22px, 2vw, 29px);
 
   line-height: 1.05;
+
 }
 
-.person .l {
+
+.day-copy {
+
+  margin-top: 7px;
+
   color: #C9C2B7;
+
+  font-size: 14px;
+
+  line-height: 1.45;
+
 }
 
 
 /* =========================================================
-   PARTNERSHIP
-========================================================= */
+   WHO IT'S FOR
+   ========================================================= */
 
-.method {
+
+.member-story {
+
   display: grid;
 
-  grid-template-columns:
-    repeat(
-      auto-fit,
-      minmax(min(100%, 190px), 1fr)
-    );
+  grid-template-columns: 1fr 1fr;
 
-  gap: 32px 24px;
+  gap: clamp(50px, 8vw, 120px);
 
-  margin-bottom: 72px;
+  align-items: center;
+
+  margin-top: clamp(70px, 9vw, 130px);
+
 }
 
-.method > div {
-  border-top: 1px solid #1C1F22;
+
+.member-image {
+
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  background: #292D31;
+
+}
+
+
+.member-image img {
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: 50% 68%;
+
+}
+
+
+.member-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: clamp(22px, 2.5vw, 34px);
+
+}
+
+
+.person h3 {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(26px, 2.5vw, 36px);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+}
+
+
+.person p {
+
+  margin: 6px 0 0;
+
+  color: #C9C2B7;
+
+  font-size: 16px;
+
+  line-height: 1.45;
+
+}
+
+
+/* =========================================================
+   05 — THE PARTNERSHIP
+   ========================================================= */
+
+
+#buildings {
+
+  background: var(--paper);
+
+}
+
+
+.buildings-inner {
+
+  padding-top: clamp(70px, 9vw, 130px);
+
+  padding-bottom: clamp(80px, 9vw, 140px);
+
+}
+
+
+.buildings-intro {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: clamp(50px, 8vw, 120px);
+
+  margin-top: clamp(42px, 5vw, 72px);
+
+  padding-top: clamp(30px, 3vw, 44px);
+
+  border-top: 1px solid var(--line);
+
+}
+
+
+.buildings-intro p {
+
+  margin: 0;
+
+}
+
+
+.buildings-intro .lead {
+
+  font-family: var(--serif);
+
+  font-size: clamp(25px, 2.3vw, 34px);
+
+  line-height: 1.35;
+
+}
+
+
+.buildings-intro .copy {
+
+  max-width: 560px;
+
+  color: var(--ink-soft);
+
+  font-size: clamp(17px, 1.4vw, 20px);
+
+  line-height: 1.55;
+
+}
+
+
+/* =========================================================
+   PARTNERSHIP IMAGE
+   SAME 3:2 PHOTO LOGIC AS SISTER SITE
+   ========================================================= */
+
+
+.partnership-photo {
+
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 3 / 2;
+
+  overflow: hidden;
+
+  margin-top: clamp(50px, 6vw, 88px);
+
+  margin-bottom: clamp(50px, 6vw, 88px);
+
+  background: var(--ink);
+
+}
+
+
+.partnership-photo img {
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center center;
+
+}
+
+
+/* =========================================================
+   METHOD
+   ========================================================= */
+
+
+.method-line {
+
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px 20px;
+
+  margin-bottom: 28px;
+
+  font-family: var(--condensed);
+
+  text-transform: uppercase;
+
+  letter-spacing: .30em;
+
+  font-size: clamp(14px, 1.5vw, 19px);
+
+}
+
+
+.method-line .arrow {
+
+  color: var(--rust);
+
+}
+
+
+.method {
+
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: clamp(20px, 2.5vw, 34px);
+
+  margin-bottom: clamp(60px, 7vw, 100px);
+
+}
+
+
+.method-item {
 
   padding-top: 16px;
 
-  display: flex;
-  flex-direction: column;
+  border-top: 1px solid var(--ink);
 
-  gap: 8px;
 }
 
-.method .h {
-  font-family: 'EB Garamond', serif;
 
-  font-size: 28px;
+.method-item h3 {
 
-  line-height: 1.1;
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(24px, 2.2vw, 31px);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
 }
 
-.method .l {
-  color: #4E4A45;
 
-  font-size: 16px;
+.method-item p {
+
+  margin: 8px 0 0;
+
+  color: var(--ink-soft);
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
 }
 
 
 /* =========================================================
-   APPLICATION
-========================================================= */
+   BUILDING CTA
+   ========================================================= */
 
-.tabs {
+
+.building-cta {
+
   display: grid;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr 1fr;
 
-  border-bottom: 1px solid #1C1F22;
+  gap: clamp(50px, 8vw, 120px);
+
+  align-items: center;
+
+  padding:
+    clamp(38px, 4vw, 58px)
+    0;
+
+  border-top: 1px solid var(--line);
+
+  border-bottom: 1px solid var(--line);
+
 }
 
+
+.building-cta h3 {
+
+  margin: 14px 0 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(25px, 2.4vw, 34px);
+
+  line-height: 1.3;
+
+  font-weight: 400;
+
+}
+
+
+.building-cta-right {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 22px;
+
+}
+
+
+.building-cta-right p {
+
+  margin: 0;
+
+  max-width: 480px;
+
+  color: var(--ink-soft);
+
+}
+
+
+/* =========================================================
+   06 / 07 — LIVEWELLS WORLD + PARTNERS
+   ========================================================= */
+
+
+.world-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+}
+
+
+.world-panel {
+
+  min-height: 520px;
+
+  padding:
+    clamp(60px, 7vw, 110px)
+    clamp(20px, 4.5vw, 72px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  gap: 22px;
+
+}
+
+
+.world-panel.light {
+
+  background: var(--paper-light);
+
+}
+
+
+.world-panel.green {
+
+  background: var(--green);
+
+  color: var(--paper-light);
+
+}
+
+
+.world-panel h2 {
+
+  margin: 0;
+
+  max-width: 600px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(34px, 3.7vw, 54px);
+
+  line-height: 1.02;
+
+  font-weight: 400;
+
+}
+
+
+.world-panel p {
+
+  margin: 0;
+
+  max-width: 500px;
+
+  color: var(--ink-soft);
+
+}
+
+
+.world-panel.green p {
+
+  color: #DCE2D6;
+
+}
+
+
+/* =========================================================
+   08 — FOUNDING BUILDINGS
+   ========================================================= */
+
+
+#apply {
+
+  background: var(--paper);
+
+}
+
+
+.apply-inner {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: clamp(60px, 9vw, 140px);
+
+  max-width: 1160px;
+
+  padding-top: clamp(75px, 9vw, 135px);
+
+  padding-bottom: clamp(80px, 9vw, 140px);
+
+}
+
+
+.apply-copy h2 {
+
+  margin: clamp(20px, 2vw, 30px) 0 24px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(44px, 5vw, 72px);
+
+  line-height: .98;
+
+  font-weight: 400;
+
+}
+
+
+.apply-copy p {
+
+  margin: 0;
+
+  max-width: 450px;
+
+  color: var(--ink-soft);
+
+}
+
+
+/* =========================================================
+   TABS
+   ========================================================= */
+
+
+.tabs {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  border-bottom: 1px solid var(--ink);
+
+}
+
+
 .tabs button {
+
   background: transparent;
-  color: #1C1F22;
+
+  color: var(--ink);
 
   border: 0;
 
@@ -493,583 +1500,984 @@ header h1 {
 
   cursor: pointer;
 
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: var(--condensed);
+
+  text-transform: uppercase;
+
+  letter-spacing: .25em;
 
   font-size: 13px;
 
-  letter-spacing: .3em;
-
-  text-align: center;
 }
 
-.tabs button:hover {
-  color: #A8643F;
-}
 
 .tabs button[aria-selected="true"] {
-  background: #1C1F22;
 
-  color: #F4EFE7;
+  background: var(--ink);
+
+  color: var(--paper-light);
+
 }
 
+
 .panel {
+
   padding-top: 32px;
 
   display: flex;
+
   flex-direction: column;
+
+  align-items: flex-start;
 
   gap: 20px;
 
-  align-items: flex-start;
 }
+
 
 .panel[hidden] {
+
   display: none;
+
 }
 
+
 .panel p {
+
   margin: 0;
 
-  color: #4E4A45;
+  max-width: 430px;
 
-  max-width: 420px;
+  color: var(--ink-soft);
+
 }
 
 
 /* =========================================================
    FOOTER
-========================================================= */
+   ========================================================= */
+
 
 footer {
-  background: #1C1F22;
 
-  color: #F4EFE7;
+  background: var(--ink);
 
-  padding-top: 56px;
-  padding-bottom: 56px;
+  color: rgba(244,239,231,.72);
+
+  border-top: 1px solid rgba(244,239,231,.12);
+
+}
+
+
+.footer-inner {
+
+  position: relative;
+
+  padding-top: clamp(34px, 4vw, 58px);
+
+  padding-bottom: clamp(34px, 4vw, 58px);
 
   display: flex;
 
   justify-content: space-between;
+
   align-items: center;
 
-  gap: 24px;
+  gap: 30px;
 
-  flex-wrap: wrap;
-
-  font-family: 'Barlow Condensed', sans-serif;
-
-  font-size: 13px;
-
-  letter-spacing: .42em;
 }
 
-footer a {
-  text-decoration: none;
+
+.footer-left {
+
+  color: rgba(244,239,231,.85);
+
+}
+
+
+.footer-center {
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 28px;
+
+}
+
+
+.footer-right {
+
+  margin-left: auto;
+
+  color: rgba(244,239,231,.48);
+
+}
+
+
+footer a:hover {
+
+  color: var(--paper-light);
+
+  opacity: .7;
+
 }
 
 
 /* =========================================================
-   TABLET + MOBILE
-========================================================= */
+   TABLET
+   ========================================================= */
 
-@media (max-width: 900px) {
+
+@media (max-width: 980px) and (min-width: 761px) {
+
+  .hero-title {
+
+    font-size: clamp(58px, 7vw, 82px);
+
+  }
+
+
+  .day {
+
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+
+
+  .method {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   SAME BREAKPOINT AS EXPEDITIONS
+   ========================================================= */
+
+
+@media (max-width: 760px) {
+
+
+  html,
+  body {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+
+  }
+
+
+  .w {
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+
+  }
+
 
   body {
+
     font-size: 16px;
-    line-height: 1.55;
-  }
 
-  .pad {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
-  .wrap {
-    max-width: none;
-  }
-
-  .caps {
-    font-size: 11px;
-    letter-spacing: .34em;
   }
 
 
-  /* ---------- MOBILE NAV ---------- */
+  /* =====================================================
+     NAV
+     ===================================================== */
+
 
   nav {
-    padding-top: 20px;
-    padding-bottom: 20px;
+
+    padding-top: 22px;
+
+    padding-left: 20px;
+
+    padding-right: 20px;
 
     flex-wrap: nowrap;
 
-    align-items: center;
   }
 
-  nav > a:first-child {
-    font-size: 12px !important;
-    letter-spacing: .34em !important;
 
-    white-space: nowrap;
+  nav .brand {
+
+    font-size: 11px;
+
+    letter-spacing: .30em;
+
   }
+
 
   nav .links {
+
     gap: 0;
-    flex-wrap: nowrap;
+
   }
 
-  nav .links > a:not(.apply) {
+
+  nav .links a:not(.apply) {
+
     display: none;
+
   }
+
 
   nav .apply {
-    display: inline-block;
+
+    display: inline-flex;
 
     padding: 8px 12px;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    letter-spacing: .28em;
+    letter-spacing: .25em;
 
-    white-space: nowrap;
   }
 
 
-  /* ---------- MOBILE HERO ---------- */
+  /* =====================================================
+     01 — HERO
+     MATCHES EXPEDITIONS MOBILE HEIGHT LOGIC
+     ===================================================== */
 
-  header {
-    min-height: 100svh;
 
-    align-items: flex-end;
+  #hero {
+
+    aspect-ratio: auto !important;
+
+    height: 100svh !important;
+
+    min-height: 720px !important;
+
   }
 
-  header .bg {
-    height: 100%;
 
-    object-position: 57% 50%;
+  #hero > img {
 
-    filter:
-      saturate(.85)
-      sepia(.12)
-      brightness(.82);
+    object-position: 55% center !important;
+
   }
 
-  header .fade {
-    background:
-      linear-gradient(
-        to top,
-        rgba(22,20,18,.90) 0%,
-        rgba(22,20,18,.52) 44%,
-        rgba(22,20,18,.22) 100%
-      );
+
+  .hero-content {
+
+    padding:
+      120px
+      20px
+      42px !important;
+
   }
 
-  header .inner {
-    padding-top: 130px;
-    padding-bottom: 52px;
 
-    gap: 20px;
+  .hero-kicker {
+
+    margin-bottom: 22px;
+
   }
 
-  header h1 {
-    font-size: clamp(48px, 15vw, 72px);
 
-    line-height: .91;
+  .hero-title {
 
-    letter-spacing: -.025em;
+    font-size: clamp(52px, 15vw, 72px) !important;
+
+    line-height: .88 !important;
+
+    letter-spacing: -.015em !important;
+
+  }
+
+
+  .hero-title br {
+
+    display: none;
+
+  }
+
+
+  .hero-intro {
+
+    margin-top: 24px;
+
+    margin-bottom: 28px;
 
     max-width: 100%;
+
+    font-size: 17px !important;
+
+    line-height: 1.45 !important;
+
   }
 
-  header h1 br {
+
+  .hero-intro br {
+
     display: none;
-  }
 
-  header p {
-    font-size: 16px;
-
-    line-height: 1.55;
-
-    max-width: 34rem;
-  }
-
-  header p .block {
-    display: inline;
-  }
-
-  header p .block + .block:before {
-    content: ' ';
-  }
-
-  .ctas {
-    align-items: flex-start;
-
-    gap: 20px;
-
-    flex-direction: column;
-  }
-
-  .btn {
-    font-size: 12px;
-
-    letter-spacing: .29em;
-
-    padding: 15px 20px;
-  }
-
-  .line-link {
-    font-size: 12px;
-
-    letter-spacing: .28em;
   }
 
 
-  /* ---------- INTRO ---------- */
-
-  .split {
-    display: grid;
-
-    grid-template-columns: 1fr;
-
-    gap: 28px;
-
-    padding-top: 26px;
-  }
-
-  .body19 {
-    font-size: 17px;
-  }
-
-
-  /* ---------- THE CLUB ---------- */
-
-  .rooms {
-    grid-template-columns: 1fr;
-
-    gap: 44px;
-  }
-
-  .room {
-    gap: 11px;
-  }
-
-  .room .frame {
-    aspect-ratio: 4 / 5;
-  }
-
-  .room .name {
-    font-size: 12px;
-
-    letter-spacing: .38em;
-  }
-
-  .room p {
-    font-size: 15px;
-
-    line-height: 1.5;
-  }
-
-  .room:nth-child(1) img {
-    object-position: 82% 50% !important;
-  }
-
-  .room:nth-child(2) img {
-    object-position: 50% 50% !important;
-  }
-
-  .room:nth-child(3) img {
-    object-position: 46% 50% !important;
-  }
-
-  .room:nth-child(4) img {
-    object-position: 43% 50% !important;
-  }
-
-  .room:nth-child(5) img {
-    object-position: 50% 50% !important;
-  }
-
-  .room:nth-child(6) img {
-    object-position: 50% 50% !important;
-  }
-
-
-  /* ---------- DAY AT THE CLUB ---------- */
-
-  .day {
-    grid-template-columns: 1fr;
-
-    gap: 0;
-  }
-
-  .day > div {
-    padding: 18px 0;
-
-    border-top:
-      1px solid rgba(244,239,231,.28);
-
-    display: grid;
-
-    grid-template-columns: 64px 1fr;
-
-    column-gap: 16px;
-
-    row-gap: 4px;
-  }
-
-  .day .t {
-    grid-row: 1 / span 2;
-
-    font-size: 11px;
-
-    padding-top: 4px;
-  }
-
-  .day .h {
-    font-size: 25px;
-  }
-
-  .day .l {
-    font-size: 14px;
-  }
-
-
-  /* ---------- TWO COLUMN SECTIONS ---------- */
-
-  .two {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* ---------- MEMBERSHIP ---------- */
-
-  #membership .two[style*="margin-top:88px"] {
-    gap: 38px !important;
-  }
-
-  #membership .two[style*="margin-top:88px"] > div:first-child {
-    aspect-ratio: 4 / 5 !important;
-
-    max-height: none !important;
-  }
-
-  #membership .two[style*="margin-top:88px"] img {
-    object-position: 50% 62% !important;
-  }
-
-
-  /* ---------- PARTNERSHIP ---------- */
-
-  #buildings .two {
-    grid-template-columns: 1fr;
-  }
-
-  #buildings .wrap > div[style*="aspect-ratio:21/9"] {
-    aspect-ratio: 4 / 3 !important;
-
-    min-height: 0 !important;
-
-    margin-bottom: 48px !important;
-  }
-
-  #buildings .wrap > div[style*="aspect-ratio:21/9"] img {
-    height: 100% !important;
-
-    object-position: 50% 50% !important;
-  }
-
-  .method {
-    grid-template-columns: 1fr;
-
-    margin-bottom: 56px;
-
-    gap: 0;
-  }
-
-  .method > div {
-    padding: 18px 0;
-  }
-
-  .method .h {
-    font-size: 26px;
-  }
-
-
-  /* ---------- WORLD / PARTNERS ---------- */
-
-  section.two {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* ---------- APPLICATION ---------- */
-
-  #apply .two {
-    grid-template-columns: 1fr;
-
-    gap: 48px !important;
-  }
-
-  .tabs button {
-    font-size: 11px;
-
-    letter-spacing: .24em;
-
-    padding: 13px 5px;
-  }
-
-  .panel {
-    padding-top: 26px;
-  }
-
-
-  /* ---------- FOOTER ---------- */
-
-  footer {
-    padding-top: 42px;
-    padding-bottom: 42px;
+  .hero-ctas {
 
     display: flex;
 
     flex-direction: column;
 
-    align-items: center;
+    align-items: flex-start;
 
-    justify-content: center;
+    gap: 20px;
 
-    text-align: center;
+  }
 
-    gap: 24px;
+
+  .hero-ctas .btn {
+
+    width: 100%;
+
+  }
+
+
+  /* =====================================================
+     02 — READ THIS FIRST
+     ===================================================== */
+
+
+  .read-inner {
+
+    padding-top: 72px;
+
+    padding-bottom: 82px;
+
+  }
+
+
+  .section-title {
+
+    font-size: clamp(48px, 13vw, 68px);
+
+    line-height: .92;
+
+  }
+
+
+  .intro-split {
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    margin-top: 38px;
+
+    padding-top: 28px;
+
+  }
+
+
+  .intro-statement {
+
+    font-size: 28px;
+
+  }
+
+
+  .intro-copy p {
+
+    font-size: 17px;
+
+  }
+
+
+  /* =====================================================
+     03 — CLUB
+     SAME COMPACT TWO-COLUMN MOBILE IMAGE LOGIC
+     AS EXPEDITIONS
+     ===================================================== */
+
+
+  .club-heading {
+
+    padding-bottom: 30px;
+
+  }
+
+
+  .club-heading h2 {
+
+    font-size: clamp(42px, 11vw, 56px);
+
+  }
+
+
+  .rooms {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    gap: 28px 14px !important;
+
+    width: 100% !important;
+
+    padding-bottom: 82px;
+
+  }
+
+
+  .room {
+
+    width: 100%;
+
+    min-width: 0;
+
+  }
+
+
+  .room-frame {
+
+    width: 100% !important;
+
+    aspect-ratio: 1 / 1.08 !important;
+
+    height: auto !important;
+
+    overflow: hidden !important;
+
+  }
+
+
+  .room-frame img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+  }
+
+
+  .room-name {
+
+    margin-top: 12px;
 
     font-size: 11px;
 
-    letter-spacing: .32em;
+    letter-spacing: .25em;
+
   }
 
-  footer > span:first-child {
-    font-size: 13px !important;
+
+  .room p {
+
+    margin-top: 6px;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
   }
 
-  footer > div {
-    justify-content: center;
 
-    gap: 22px !important;
+  .room:nth-child(1) img {
+
+    object-position: 80% center !important;
+
+  }
+
+
+  .room:nth-child(2) img {
+
+    object-position: center center !important;
+
+  }
+
+
+  .room:nth-child(3) img {
+
+    object-position: 45% center !important;
+
+  }
+
+
+  .room:nth-child(4) img {
+
+    object-position: 42% center !important;
+
+  }
+
+
+  .room:nth-child(5) img {
+
+    object-position: center center !important;
+
+  }
+
+
+  .room:nth-child(6) img {
+
+    object-position: center center !important;
+
+  }
+
+
+  /* =====================================================
+     04 — MEMBERSHIP
+     ===================================================== */
+
+
+  .membership-inner {
+
+    padding-top: 72px;
+
+    padding-bottom: 82px;
+
+  }
+
+
+  .membership-title {
+
+    font-size: clamp(48px, 13vw, 68px);
+
+    line-height: .92;
+
+    margin-bottom: 42px;
+
+  }
+
+
+  .membership-intro {
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding-top: 28px;
+
+  }
+
+
+  .membership-intro h3 {
+
+    font-size: 30px;
+
+  }
+
+
+  .membership-copy p {
+
+    font-size: 17px;
+
+  }
+
+
+  /* DAY */
+
+
+  .day-wrap {
+
+    margin-top: 60px;
+
+  }
+
+
+  .day {
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+  }
+
+
+  .day-item {
+
+    display: grid;
+
+    grid-template-columns: 64px 1fr;
+
+    column-gap: 14px;
+
+    padding: 18px 0;
+
+  }
+
+
+  .day-time {
+
+    grid-row: 1 / span 2;
+
+    padding-top: 4px;
+
+    font-size: 11px;
+
+  }
+
+
+  .day-title {
+
+    margin: 0;
+
+    font-size: 25px;
+
+  }
+
+
+  .day-copy {
+
+    margin-top: 4px;
+
+  }
+
+
+  /* WHO IT'S FOR */
+
+
+  .member-story {
+
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+
+    margin-top: 62px;
+
+  }
+
+
+  .member-image {
+
+    aspect-ratio: 3 / 4;
+
+  }
+
+
+  .member-image img {
+
+    object-position: 50% 65%;
+
+  }
+
+
+  .member-list {
+
+    gap: 26px;
+
+  }
+
+
+  .person h3 {
+
+    font-size: 28px;
+
+  }
+
+
+  /* =====================================================
+     05 — PARTNERSHIP
+     ===================================================== */
+
+
+  .buildings-inner {
+
+    padding-top: 72px;
+
+    padding-bottom: 82px;
+
+  }
+
+
+  .buildings-intro {
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    margin-top: 38px;
+
+    padding-top: 28px;
+
+  }
+
+
+  .buildings-intro .lead {
+
+    font-size: 27px;
+
+  }
+
+
+  .buildings-intro .copy {
+
+    font-size: 17px;
+
+  }
+
+
+  .partnership-photo {
+
+    aspect-ratio: 3 / 2;
+
+    margin-top: 48px;
+
+    margin-bottom: 52px;
+
+  }
+
+
+  .partnership-photo img {
+
+    object-position: center center;
+
+  }
+
+
+  .method-line {
+
+    font-size: 12px;
+
+    letter-spacing: .22em;
+
+    gap: 8px 12px;
+
+  }
+
+
+  .method {
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+    margin-bottom: 58px;
+
+  }
+
+
+  .method-item {
+
+    padding: 18px 0;
+
+  }
+
+
+  .method-item h3 {
+
+    font-size: 27px;
+
+  }
+
+
+  .building-cta {
+
+    grid-template-columns: 1fr;
+
+    gap: 32px;
+
+  }
+
+
+  /* =====================================================
+     06 / 07
+     ===================================================== */
+
+
+  .world-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .world-panel {
+
+    min-height: auto;
+
+    padding:
+      72px
+      20px
+      76px;
+
+  }
+
+
+  .world-panel h2 {
+
+    font-size: clamp(38px, 10vw, 50px);
+
+  }
+
+
+  /* =====================================================
+     08 — APPLY
+     ===================================================== */
+
+
+  .apply-inner {
+
+    grid-template-columns: 1fr;
+
+    gap: 48px;
+
+    padding-top: 72px;
+
+    padding-bottom: 82px;
+
+  }
+
+
+  .apply-copy h2 {
+
+    font-size: clamp(46px, 12vw, 62px);
+
+    line-height: .94;
+
+  }
+
+
+  .tabs button {
+
+    padding: 13px 5px;
+
+    font-size: 11px;
+
+    letter-spacing: .20em;
+
+  }
+
+
+  .panel {
+
+    padding-top: 28px;
+
+  }
+
+
+  /* =====================================================
+     FOOTER
+     MATCHES EXPEDITIONS MOBILE FOOTER STRUCTURE
+     ===================================================== */
+
+
+  .footer-inner {
+
+    position: relative !important;
+
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    gap: 18px !important;
+
+    padding-top: 42px !important;
+
+    padding-bottom: 42px !important;
+
+    text-align: center !important;
+
+  }
+
+
+  .footer-left {
+
+    order: 1;
+
+    width: 100%;
+
+  }
+
+
+  .footer-center {
+
+    position: relative !important;
+
+    left: auto !important;
+
+    top: auto !important;
+
+    transform: none !important;
+
+    order: 2;
+
+    width: 100%;
+
+  }
+
+
+  .footer-right {
+
+    order: 3;
+
+    width: 100%;
+
+    margin-left: 0;
+
   }
 
 }
 
 
 /* =========================================================
-   SMALL MOBILE
-========================================================= */
+   VERY SMALL PHONES
+   ========================================================= */
 
-@media (max-width: 520px) {
 
-  .pad {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+@media (max-width: 420px) {
 
-  header .bg {
-    object-position: 60% 50%;
-  }
 
-  header .inner {
-    padding-bottom: 42px;
-  }
+  .hero-title {
 
-  header h1 {
-    font-size: clamp(46px, 14.2vw, 64px);
-  }
+    font-size: clamp(48px, 14.5vw, 62px) !important;
 
-  header p {
-    font-size: 15px;
   }
 
 
-  /* Editorial spacing */
+  .rooms {
 
-  section[style*="padding-top:clamp(80px,12vw,160px)"] {
-    padding-top: 84px !important;
-    padding-bottom: 92px !important;
+    gap: 26px 12px !important;
+
   }
 
-  #club {
-    padding-bottom: 92px !important;
-  }
-
-  #membership {
-    padding-top: 88px !important;
-    padding-bottom: 92px !important;
-  }
-
-  #buildings {
-    padding-top: 88px !important;
-    padding-bottom: 92px !important;
-  }
-
-  #apply {
-    padding-top: 88px !important;
-    padding-bottom: 92px !important;
-  }
-
-  .h2 {
-    line-height: .98;
-  }
-
-  .room .frame {
-    aspect-ratio: 4 / 5;
-  }
 
   .room p {
-    max-width: 32rem;
+
+    font-size: 13px;
+
   }
 
 
-  /* Membership */
+  .room-name {
 
-  #membership h2 {
-    margin-bottom: 42px !important;
-  }
+    font-size: 10px;
 
-  #membership .split {
-    gap: 30px;
-  }
+    letter-spacing: .22em;
 
-  #membership .two[style*="margin-top:88px"] {
-    margin-top: 64px !important;
-  }
-
-
-  /* Buildings */
-
-  #buildings .wrap > div:first-child {
-    margin-bottom: 48px !important;
-  }
-
-  #buildings .wrap > div[style*="aspect-ratio:21/9"] {
-    aspect-ratio: 5 / 4 !important;
-  }
-
-  #buildings .wrap > div[style*="font-family:'Barlow Condensed'"] {
-    line-height: 1.9;
-  }
-
-
-  /* World / partners */
-
-  section.two > .pad {
-    padding-top: 72px !important;
-    padding-bottom: 76px !important;
-  }
-
-  .tabs {
-    width: 100%;
   }
 
 }
 
 </style>
+
 </head>
 
 
@@ -1078,8 +2486,9 @@ footer a {
 
 <!-- ======================================================
      FORM LINKS
-     Replace each # with the correct Google Form URL
-======================================================= -->
+     Add final Google Form URLs here later
+     ====================================================== -->
+
 
 <script>
 
@@ -1098,16 +2507,18 @@ const FORMS = {
 
 <!-- ======================================================
      NAVIGATION
-======================================================= -->
+     ====================================================== -->
 
-<nav class="pad">
+
+<nav class="w">
 
   <a
-    href="#top"
-    style="font-size:15px;letter-spacing:.42em"
+    href="#hero"
+    class="brand"
   >
     LIVEWELLS™ CLUBS
   </a>
+
 
   <div class="links">
 
@@ -1136,501 +2547,506 @@ const FORMS = {
 
 
 <!-- ======================================================
-     HERO
-======================================================= -->
+     01 — HERO
+     ====================================================== -->
 
-<header id="top">
+
+<section id="hero">
+
 
   <img
-    class="bg"
     src="images/fire-terrace.png"
-    alt="A club terrace high above the city at dusk"
+    alt="Livewells Clubs terrace overlooking the city"
   >
 
-  <div class="fade"></div>
+
+  <div class="hero-veil"></div>
 
 
-  <div class="inner pad">
+  <div class="hero-content">
 
-    <div class="caps">
-      A PRIVATE MEMBERS' CLUB
+
+    <div class="hero-lower">
+
+
+      <div class="k hero-kicker">
+        A PRIVATE MEMBERS' CLUB
+      </div>
+
+
+      <h1 class="hero-title">
+
+        We turn exceptional buildings<br>
+
+        <em>
+          into extraordinary clubs.
+        </em>
+
+      </h1>
+
+
+      <p class="hero-intro">
+
+        A private members’ club woven into a city’s finest residential buildings.<br>
+
+        Designed for how you want to live:
+        work, train, recover, connect and belong.
+
+      </p>
+
+
+      <div class="hero-ctas">
+
+
+        <a
+          class="btn"
+          data-form="member"
+          href="#apply"
+        >
+          JOIN THE FOUNDING LIST
+        </a>
+
+
+        <a
+          class="line-link"
+          href="#buildings"
+        >
+          FOR BUILDINGS →
+        </a>
+
+
+      </div>
+
+
     </div>
 
-
-    <h1>
-      We turn exceptional buildings<br>
-      <em>into extraordinary clubs.</em>
-    </h1>
-
-
-    <p>
-
-      <span class="block">
-        A private members’ club woven into a city’s finest residential buildings.
-      </span>
-
-      <span class="block">
-        Designed for how you want to live: work, train, recover, connect and belong.
-      </span>
-
-    </p>
-
-
-    <div class="ctas">
-
-      <a
-        class="btn"
-        data-form="member"
-        href="#apply"
-        target="_blank"
-        rel="noopener"
-      >
-        JOIN THE FOUNDING LIST
-      </a>
-
-
-      <a
-        class="line-link"
-        href="#buildings"
-        style="border-bottom-color:rgba(244,239,231,.6)"
-      >
-        FOR BUILDINGS →
-      </a>
-
-    </div>
 
   </div>
 
-</header>
+
+</section>
 
 
 <!-- ======================================================
      02 — READ THIS FIRST
-======================================================= -->
-
-<section
-  class="pad"
-  style="
-    padding-top:clamp(80px,12vw,160px);
-    padding-bottom:clamp(80px,12vw,160px)
-  "
->
-
-  <div
-    class="wrap"
-    style="
-      display:flex;
-      flex-direction:column;
-      gap:48px
-    "
-  >
-
-    <div style="container-type:inline-size">
-
-      <div class="caps kick">
-        02 · READ THIS FIRST
-      </div>
+     ====================================================== -->
 
 
-      <h2
-        class="h2"
-        style="font-size:clamp(38px,7cqw,92px)"
-      >
+<section id="read-first">
 
-        <span class="block">
-          Everything you need.
-        </span>
 
-        <em class="block">
-          All in one place.
-        </em>
+  <div class="w content-width read-inner">
 
-      </h2>
 
+    <div
+      class="k"
+      style="color:var(--rust)"
+    >
+      02 · READ THIS FIRST
     </div>
 
 
-    <div class="split">
+    <h2 class="section-title">
 
-      <p
-        class="serif"
-        style="
-          margin:0;
-          flex:none;
-          font-size:clamp(28px,2.6vw,34px);
-          line-height:1.4
-        "
-      >
+      Everything you need.<br>
+
+      <em>
+        All in one place.
+      </em>
+
+    </h2>
+
+
+    <div class="intro-split">
+
+
+      <p class="intro-statement">
+
         More than a gym.<br>
+
         More than a workspace.<br>
+
         More than a social club.
+
       </p>
 
 
-      <div
-        style="
-          display:flex;
-          flex-direction:column;
-          gap:20px;
-          flex:1 1 360px;
-          max-width:560px;
-          padding-top:6px
-        "
-      >
+      <div class="intro-copy">
 
-        <p class="body19">
-          A private club bringing together wellness, work,
-          hospitality and community. Thoughtfully designed,
-          beautifully operated and built around the way you live.
+
+        <p>
+
+          A private club bringing together wellness,
+          work, hospitality and community.
+
+          Thoughtfully designed, beautifully operated
+          and built around the way you live.
+
         </p>
 
-        <p
-          class="body19"
-          style="color:#6B645B"
-        >
-          We create the spaces, experiences and moments that
-          bring the club to life.
+
+        <p>
+
+          We create the spaces, experiences and moments
+          that bring the club to life.
+
         </p>
+
 
       </div>
 
+
     </div>
 
+
   </div>
+
 
 </section>
 
 
 <!-- ======================================================
      03 — THE CLUB
-======================================================= -->
+     ====================================================== -->
 
-<section
-  id="club"
-  class="pad wrap"
-  style="padding-bottom:clamp(80px,10vw,140px)"
->
 
-  <div style="margin-bottom:36px">
+<section id="club">
 
-    <div class="caps kick">
+
+  <div class="w content-width club-heading">
+
+
+    <div
+      class="k"
+      style="color:var(--rust)"
+    >
       03 · THE CLUB
     </div>
 
-    <h2
-      class="serif"
-      style="
-        font-size:clamp(40px,5vw,68px);
-        line-height:1;
-        margin:20px 0 0
-      "
-    >
-      One floor. <em>The whole day.</em>
+
+    <h2>
+
+      One floor.
+
+      <em>
+        The whole day.
+      </em>
+
     </h2>
+
 
   </div>
 
 
-  <div class="rooms">
+  <div class="w content-width rooms">
 
 
-    <!-- DESK -->
+    <!-- THE DESK -->
 
-    <div class="room">
 
-      <div class="frame">
+    <article class="room">
+
+
+      <div class="room-frame">
 
         <img
           class="photo"
           src="images/desk.jpg"
-          alt="The desk"
-          style="object-position:92% 50%"
+          alt="The Desk"
+          style="object-position:82% center"
+          loading="lazy"
         >
 
       </div>
 
-      <div class="name">
+
+      <div class="room-name">
         THE DESK
       </div>
 
+
       <p>
-        A quiet room above the city, coffee on hand,
-        taking calls looking out of the window.
+
+        A quiet room above the city,
+        coffee on hand, taking calls
+        looking out of the window.
+
       </p>
 
-    </div>
+
+    </article>
 
 
-    <!-- POOL -->
+    <!-- THE POOL -->
 
-    <div class="room">
 
-      <div class="frame">
+    <article class="room">
+
+
+      <div class="room-frame">
 
         <img
           class="photo"
           src="images/swimmer.jpg"
-          alt="The pool"
-          style="object-position:46% 50%"
+          alt="The Pool"
+          style="object-position:center center"
+          loading="lazy"
         >
 
       </div>
 
-      <div class="name">
+
+      <div class="room-name">
         THE POOL
       </div>
 
+
       <p>
-        First in the club, laps in before the city wakes up.
+
+        First in the club,
+        laps in before the city wakes up.
+
       </p>
 
-    </div>
+
+    </article>
 
 
-    <!-- HEAT -->
+    <!-- THE HEAT -->
 
-    <div class="room">
 
-      <div class="frame">
+    <article class="room">
+
+
+      <div class="room-frame">
 
         <img
           class="photo"
           src="images/sauna.jpg"
-          alt="The heat"
-          style="object-position:42% 50%"
+          alt="The Heat"
+          style="object-position:45% center"
+          loading="lazy"
         >
 
       </div>
 
-      <div class="name">
+
+      <div class="room-name">
         THE HEAT
       </div>
 
+
       <p>
-        Fresh cedar, steam and a calm moment before your day starts.
+
+        Fresh cedar, steam and a calm moment
+        before your day starts.
+
       </p>
 
-    </div>
+
+    </article>
 
 
-    <!-- COLD -->
+    <!-- THE COLD -->
 
-    <div class="room">
 
-      <div class="frame">
+    <article class="room">
+
+
+      <div class="room-frame">
 
         <img
           class="photo"
           src="images/cold-plunge.webp"
-          alt="The cold"
-          style="object-position:38% 50%"
+          alt="The Cold"
+          style="object-position:42% center"
+          loading="lazy"
         >
 
       </div>
 
-      <div class="name">
+
+      <div class="room-name">
         THE COLD
       </div>
 
+
       <p>
+
         The first breath is the hardest part.
+
       </p>
 
-    </div>
+
+    </article>
 
 
     <!-- LAST LIGHT -->
 
-    <div class="room">
 
-      <div class="frame">
+    <article class="room">
+
+
+      <div class="room-frame">
 
         <img
           class="photo"
           src="images/pool-columns.webp"
-          alt="Last light"
-          style="object-position:50% 50%"
+          alt="Last Light"
+          style="object-position:center center"
+          loading="lazy"
         >
 
       </div>
 
-      <div class="name">
+
+      <div class="room-name">
         LAST LIGHT
       </div>
 
+
       <p>
-        The water is still warm when the last meeting ends.
+
+        The water is still warm
+        when the last meeting ends.
+
       </p>
 
-    </div>
+
+    </article>
 
 
-    <!-- TABLE -->
+    <!-- THE TABLE -->
 
-    <div class="room">
 
-      <div class="frame">
+    <article class="room">
+
+
+      <div class="room-frame">
 
         <img
           class="photo"
           src="images/table.jpg"
-          alt="The table"
-          style="object-position:50% 50%"
+          alt="The Table"
+          style="object-position:center center"
+          loading="lazy"
         >
 
       </div>
 
-      <div class="name">
+
+      <div class="room-name">
         THE TABLE
       </div>
 
+
       <p>
-        Long dinners, people who know your name, and one more glass.
+
+        Long dinners, people who know your name,
+        and one more glass.
+
       </p>
 
-    </div>
+
+    </article>
 
 
   </div>
+
 
 </section>
 
 
 <!-- ======================================================
      04 — MEMBERSHIP
-======================================================= -->
+     ====================================================== -->
 
-<section
-  id="membership"
-  class="pad"
-  style="
-    background:#1C1F22;
-    color:#F4EFE7;
-    padding-top:clamp(80px,12vw,150px);
-    padding-bottom:clamp(80px,12vw,150px)
-  "
->
 
-  <div class="wrap">
+<section id="membership">
+
+
+  <div class="w content-width membership-inner">
 
 
     <div
-      class="caps"
+      class="k"
       style="color:#D9B89E"
     >
       04 · MEMBERSHIP
     </div>
 
 
-    <h2
-      class="serif"
-      style="
-        font-size:clamp(40px,5.5vw,76px);
-        line-height:1;
-        margin:24px 0 56px;
-        max-width:900px
-      "
-    >
+    <h2 class="membership-title">
+
       Join the club<br>
-      <em>Belong to something more.</em>
+
+      <em>
+        Belong to something more.
+      </em>
+
     </h2>
 
 
-    <div
-      class="split"
-      style="border-top-color:rgba(244,239,231,.25)"
-    >
+    <div class="membership-intro">
 
 
-      <div
-        style="
-          flex:0 1 520px;
-          display:flex;
-          flex-direction:column;
-          gap:12px
-        "
-      >
+      <h3>
 
-        <p
-          class="serif"
-          style="
-            margin:0;
-            font-size:clamp(30px,3vw,40px);
-            line-height:1.15
-          "
-        >
-          Your place in the city.
-        </p>
+        Your place in the city.
 
-
-        <p
-          class="serif"
-          style="
-            margin:0;
-            font-style:italic;
-            font-size:clamp(24px,2.2vw,30px);
-            line-height:1.3;
-            color:#E4DDD2
-          "
-        >
+        <em>
           A club that becomes a part of your everyday life.
-        </p>
+        </em>
 
-      </div>
+      </h3>
 
 
-      <div
-        style="
-          flex:1 1 360px;
-          max-width:560px;
-          display:flex;
-          flex-direction:column;
-          gap:20px;
-          padding-top:6px
-        "
-      >
+      <div class="membership-copy">
 
-        <p class="body19">
-          Work from here. Train here. Recover here.
-          Bring a friend. Stay for dinner.
+
+        <p>
+
+          Work from here.
+          Train here.
+          Recover here.
+          Bring a friend.
+          Stay for dinner.
+
           Meet people you wouldn’t have met otherwise.
+
         </p>
 
 
-        <p
-          class="body19"
-          style="color:#C9C2B7"
-        >
-          Membership is limited by design, preserving the
-          experience for everyone who calls the club their second home.
+        <p>
+
+          Membership is limited by design,
+          preserving the experience for everyone
+          who calls the club their second home.
+
         </p>
 
 
-        <p
-          style="
-            margin:8px 0 0;
-            padding-top:16px;
-            border-top:1px solid rgba(244,239,231,.15);
-            font-size:14px;
-            color:#9C958A
-          "
-        >
-          Residents of the towers are members from the day they move in.
+        <p class="membership-note">
+
+          Residents of the towers are members
+          from the day they move in.
+
         </p>
+
 
       </div>
+
 
     </div>
 
 
     <!-- DAY AT THE CLUB -->
 
-    <div style="margin-top:72px">
 
-      <div
-        class="caps"
-        style="margin-bottom:24px"
-      >
+    <div class="day-wrap">
+
+
+      <div class="k">
         A DAY AT THE CLUB
       </div>
 
@@ -1638,85 +3054,85 @@ const FORMS = {
       <div class="day">
 
 
-        <div>
+        <div class="day-item">
 
-          <div class="t">
+          <div class="day-time">
             6:30
           </div>
 
-          <div class="h">
+          <div class="day-title">
             First in.
           </div>
 
-          <div class="l">
+          <div class="day-copy">
             Lengths before the city wakes.
           </div>
 
         </div>
 
 
-        <div>
+        <div class="day-item">
 
-          <div class="t">
+          <div class="day-time">
             9:00
           </div>
 
-          <div class="h">
+          <div class="day-title">
             The desk.
           </div>
 
-          <div class="l">
+          <div class="day-copy">
             Choose your spot with a view and a good coffee.
           </div>
 
         </div>
 
 
-        <div>
+        <div class="day-item">
 
-          <div class="t">
+          <div class="day-time">
             13:00
           </div>
 
-          <div class="h">
+          <div class="day-title">
             Lunch.
           </div>
 
-          <div class="l">
+          <div class="day-copy">
             At the table, with new friends, not at the keyboard.
           </div>
 
         </div>
 
 
-        <div>
+        <div class="day-item">
 
-          <div class="t">
+          <div class="day-time">
             18:00
           </div>
 
-          <div class="h">
+          <div class="day-title">
             Heat. Cold.
           </div>
 
-          <div class="l">
-            Sunset sauna, plunge, connect, and repeat.
+          <div class="day-copy">
+            Sunset sauna, plunge, connect and repeat.
           </div>
 
         </div>
 
 
-        <div>
+        <div class="day-item">
 
-          <div class="t">
+          <div class="day-time">
             20:00
           </div>
 
-          <div class="h">
+          <div class="day-title">
             The table.
           </div>
 
-          <div class="l">
+          <div class="day-copy">
             Dinner and drinks with people worth knowing.
           </div>
 
@@ -1725,297 +3141,203 @@ const FORMS = {
 
       </div>
 
+
     </div>
 
 
     <!-- WHO IT'S FOR -->
 
-    <div
-      class="two"
-      style="
-        margin-top:88px;
-        gap:48px;
-        align-items:center
-      "
-    >
+
+    <div class="member-story">
 
 
-      <div
-        style="
-          aspect-ratio:4/5;
-          position:relative;
-          overflow:hidden;
-          background:#2A2E33;
-          max-height:720px
-        "
-      >
+      <div class="member-image">
+
 
         <img
+          class="photo"
           src="images/night-pool.avif"
-          alt="A member at the pool edge at night"
-          style="
-            position:absolute;
-            inset:0;
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            object-position:50% 70%;
-            filter:saturate(.85) sepia(.1)
-          "
+          alt="A member beside the pool at night"
+          loading="lazy"
         >
+
 
       </div>
 
 
-      <div
-        style="
-          display:flex;
-          flex-direction:column;
-          gap:32px
-        "
-      >
+      <div class="member-list">
 
 
-        <div class="caps">
+        <div class="k">
           WHO IT'S FOR
         </div>
 
 
         <div class="person">
 
-          <div class="h">
+          <h3>
             The Founders
-          </div>
+          </h3>
 
-          <div class="l">
+          <p>
             Building something, and done with working from the kitchen.
-          </div>
+          </p>
 
         </div>
 
 
         <div class="person">
 
-          <div class="h">
+          <h3>
             The Early Swimmers
-          </div>
+          </h3>
 
-          <div class="l">
+          <p>
             Water before email, every day.
-          </div>
+          </p>
 
         </div>
 
 
         <div class="person">
 
-          <div class="h">
+          <h3>
             The Hosts
-          </div>
+          </h3>
 
-          <div class="l">
-            The ones who bring people together and need a room worth bringing them to.
-          </div>
+          <p>
+            The ones who bring people together
+            and need a room worth bringing them to.
+          </p>
 
         </div>
 
 
         <div class="person">
 
-          <div class="h">
+          <h3>
             The New in Town
-          </div>
+          </h3>
 
-          <div class="l">
+          <p>
             Looking for their people, not another app.
-          </div>
+          </p>
 
         </div>
 
 
-        <div>
-
-          <a
-            class="btn"
-            data-form="member"
-            href="#apply"
-            target="_blank"
-            rel="noopener"
-          >
-            JOIN THE FOUNDING LIST
-          </a>
-
-        </div>
+        <a
+          class="btn"
+          data-form="member"
+          href="#apply"
+        >
+          JOIN THE FOUNDING LIST
+        </a>
 
 
       </div>
+
 
     </div>
 
 
   </div>
 
+
 </section>
 
 
 <!-- ======================================================
      05 — THE PARTNERSHIP
-======================================================= -->
+     ====================================================== -->
 
-<section
-  id="buildings"
-  class="pad"
-  style="
-    padding-top:clamp(80px,12vw,150px);
-    padding-bottom:clamp(80px,12vw,150px)
-  "
->
 
-  <div class="wrap">
+<section id="buildings">
+
+
+  <div class="w content-width buildings-inner">
 
 
     <div
-      style="
-        margin-bottom:64px;
-        display:flex;
-        flex-direction:column;
-        gap:48px
-      "
+      class="k"
+      style="color:var(--rust)"
     >
+      05 · THE PARTNERSHIP
+    </div>
 
 
-      <div style="container-type:inline-size">
+    <h2 class="section-title">
 
-        <div class="caps kick">
-          05 · THE PARTNERSHIP
-        </div>
+      You built the amenities.<br>
 
+      <em>
+        We turn them into a club.
+      </em>
 
-        <h2
-          class="h2"
-          style="font-size:clamp(38px,7cqw,92px)"
-        >
-
-          <span class="block">
-            You built the amenities.
-          </span>
-
-          <em class="block">
-            We turn them into a club.
-          </em>
-
-        </h2>
-
-      </div>
+    </h2>
 
 
-      <div
-        class="two"
-        style="
-          border-top:1px solid #C9C0B2;
-          padding-top:32px;
-          gap:28px clamp(40px,6vw,96px);
-          align-items:start
-        "
-      >
+    <div class="buildings-intro">
 
 
-        <p
-          class="serif"
-          style="
-            margin:0;
-            font-size:26px;
-            line-height:1.35;
-            max-width:520px;
-            text-wrap:pretty
-          "
-        >
-          The spaces are already there.
-          We bring them together and bring them to life as a club.
-        </p>
+      <p class="lead">
+
+        The spaces are already there.
+
+        We bring them together
+        and bring them to life as a club.
+
+      </p>
 
 
-        <p
-          class="body19"
-          style="
-            max-width:540px;
-            color:#4E4A45
-          "
-        >
-          Livewells Clubs operates as its own business,
-          separate from the building's residential operation.
-          Your residents become members at no cost to them.
-          Members from across the city fill the rooms every day.
-        </p>
+      <p class="copy">
 
+        Livewells Clubs operates as its own business,
+        separate from the building's residential operation.
 
-      </div>
+        Your residents become members at no cost to them.
+
+        Members from across the city fill the rooms every day.
+
+      </p>
+
 
     </div>
 
 
-    <!-- PARTNERSHIP IMAGE -->
+    <!-- BUILDING IMAGE -->
 
-    <div
-      style="
-        position:relative;
-        aspect-ratio:21/9;
-        min-height:320px;
-        overflow:hidden;
-        background:#2A2E33;
-        margin-bottom:64px
-      "
-    >
+
+    <div class="partnership-photo">
+
 
       <img
+        class="photo"
         src="images/lounge.jpg"
-        alt="A club lounge at sunset"
-        style="
-          position:absolute;
-          left:0;
-          top:0;
-          width:100%;
-          height:104%;
-          object-fit:cover;
-          object-position:50% 40%;
-          filter:saturate(.88) sepia(.08)
-        "
+        alt="Livewells club lounge"
+        loading="lazy"
       >
+
 
     </div>
 
 
-    <!-- PROCESS -->
+    <!-- METHOD -->
 
-    <div
-      style="
-        font-family:'Barlow Condensed',sans-serif;
-        font-size:clamp(14px,1.6vw,20px);
-        letter-spacing:.42em;
-        margin-bottom:28px;
-        display:flex;
-        flex-wrap:wrap;
-        gap:8px 20px
-      "
-    >
+
+    <div class="method-line">
 
       <span>DESIGN</span>
 
-      <span style="color:#A8643F">
-        →
-      </span>
+      <span class="arrow">→</span>
 
       <span>OPERATE</span>
 
-      <span style="color:#A8643F">
-        →
-      </span>
+      <span class="arrow">→</span>
 
       <span>PROGRAM</span>
 
-      <span style="color:#A8643F">
-        →
-      </span>
+      <span class="arrow">→</span>
 
       <span>HOST</span>
 
@@ -2025,55 +3347,57 @@ const FORMS = {
     <div class="method">
 
 
-      <div>
+      <div class="method-item">
 
-        <div class="h">
+        <h3>
           Design
-        </div>
+        </h3>
 
-        <div class="l">
+        <p>
           We plan the club inside the amenity floors you already have.
-        </div>
+        </p>
 
       </div>
 
 
-      <div>
+      <div class="method-item">
 
-        <div class="h">
+        <h3>
           Operate
-        </div>
+        </h3>
 
-        <div class="l">
-          Staff, hospitality and standards, run every day as our own business.
-        </div>
+        <p>
+          Staff, hospitality and standards,
+          run every day as our own business.
+        </p>
 
       </div>
 
 
-      <div>
+      <div class="method-item">
 
-        <div class="h">
+        <h3>
           Program
-        </div>
+        </h3>
 
-        <div class="l">
+        <p>
           Classes, rituals, dinners and guests.
           A calendar worth coming for.
-        </div>
+        </p>
 
       </div>
 
 
-      <div>
+      <div class="method-item">
 
-        <div class="h">
+        <h3>
           Host
-        </div>
+        </h3>
 
-        <div class="l">
-          Residents and members, one standard, one room.
-        </div>
+        <p>
+          Residents and members,
+          one standard, one room.
+        </p>
 
       </div>
 
@@ -2081,68 +3405,46 @@ const FORMS = {
     </div>
 
 
-    <!-- WHAT THE BUILDING GETS -->
-
-    <div
-      class="two"
-      style="
-        gap:40px clamp(40px,6vw,96px);
-        padding:48px 0;
-        border-top:1px solid #C9C0B2;
-        border-bottom:1px solid #C9C0B2;
-        align-items:center
-      "
-    >
+    <!-- BUILDING CTA -->
 
 
-      <div
-        style="
-          display:flex;
-          flex-direction:column;
-          gap:14px
-        "
-      >
+    <div class="building-cta">
 
-        <div class="caps">
+
+      <div>
+
+
+        <div class="k">
           WHAT THE BUILDING GETS
         </div>
 
 
-        <p
-          class="serif"
-          style="
-            margin:0;
-            font-size:clamp(24px,2.4vw,32px);
-            line-height:1.3
-          "
-        >
+        <h3>
+
           You built the amenities.<br>
+
           We turn them into a private members club.<br>
-          <em>A reason to choose this tower over the one.</em>
-        </p>
+
+          <em>
+            A reason to choose this tower over the one.
+          </em>
+
+        </h3>
+
 
       </div>
 
 
-      <div
-        style="
-          display:flex;
-          flex-direction:column;
-          gap:20px;
-          align-items:flex-start
-        "
-      >
+      <div class="building-cta-right">
 
-        <p
-          style="
-            margin:0;
-            color:#4E4A45;
-            max-width:460px
-          "
-        >
+
+        <p>
+
           We're choosing a small number of founding buildings.
+
           For owners and developers of premium residential towers,
           a working session is the first step.
+
         </p>
 
 
@@ -2150,11 +3452,10 @@ const FORMS = {
           class="btn btn-dark"
           data-form="owner"
           href="#apply"
-          target="_blank"
-          rel="noopener"
         >
           BOOK A WORKING SESSION
         </a>
+
 
       </div>
 
@@ -2164,59 +3465,47 @@ const FORMS = {
 
   </div>
 
+
 </section>
 
 
 <!-- ======================================================
-     06 + 07 — WORLD / PARTNERS
-======================================================= -->
-
-<section class="two">
+     06 / 07
+     ====================================================== -->
 
 
-  <!-- WORLD OF LIVEWELLS -->
-
-  <div
-    class="pad"
-    style="
-      background:#F4EFE7;
-      padding-top:clamp(64px,8vw,110px);
-      padding-bottom:clamp(64px,8vw,110px);
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-      align-items:flex-start
-    "
-  >
+<section class="world-grid">
 
 
-    <div class="caps kick">
+  <!-- LIVEWELLS WORLD -->
+
+
+  <div class="world-panel light">
+
+
+    <div
+      class="k"
+      style="color:var(--rust)"
+    >
       06 · THE WORLD OF LIVEWELLS
     </div>
 
 
-    <h3
-      class="serif"
-      style="
-        font-size:clamp(32px,3.6vw,48px);
-        line-height:1.05;
-        margin:0
-      "
-    >
-      Livewells extends beyond the building.
-    </h3>
+    <h2>
+
+      Livewells extends
+      beyond the building.
+
+    </h2>
 
 
-    <p
-      style="
-        margin:0;
-        color:#4E4A45;
-        max-width:460px
-      "
-    >
-      <i>Livewells Expeditions</i> was created to take
-      the same philosophy of movement, connection and shared
-      experience into extraordinary places around the world.
+    <p>
+
+      <em>Livewells Expeditions</em> was created to take
+      the same philosophy of movement, connection
+      and shared experience into extraordinary places
+      around the world.
+
     </p>
 
 
@@ -2235,52 +3524,37 @@ const FORMS = {
 
   <!-- PARTNERS -->
 
-  <div
-    class="pad"
-    style="
-      background:#3E4F3F;
-      color:#F4EFE7;
-      padding-top:clamp(64px,8vw,110px);
-      padding-bottom:clamp(64px,8vw,110px);
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-      align-items:flex-start
-    "
-  >
+
+  <div class="world-panel green">
 
 
     <div
-      class="caps"
+      class="k"
       style="color:#D5DCCF"
     >
       07 · PARTNERS
     </div>
 
 
-    <h3
-      class="serif"
-      style="
-        font-size:clamp(32px,3.6vw,48px);
-        line-height:1.05;
-        margin:0
-      "
-    >
-      We work with a few makers whose products
-      <em>belong in the room.</em>
-    </h3>
+    <h2>
+
+      We work with a few makers
+      whose products
+
+      <em>
+        belong in the room.
+      </em>
+
+    </h2>
 
 
-    <p
-      style="
-        margin:0;
-        color:#DCE2D6;
-        max-width:460px
-      "
-    >
+    <p>
+
       Recovery, food, wine, textiles and training.
-      Chosen for craft, shown as part of the club rather
-      than on a banner.
+
+      Chosen for craft, shown as part of the club
+      rather than on a banner.
+
     </p>
 
 
@@ -2288,9 +3562,6 @@ const FORMS = {
       class="line-link"
       data-form="partner"
       href="#apply"
-      target="_blank"
-      rel="noopener"
-      style="border-bottom-color:rgba(244,239,231,.7)"
     >
       PARTNER INQUIRY →
     </a>
@@ -2303,59 +3574,42 @@ const FORMS = {
 
 
 <!-- ======================================================
-     08 — APPLY
-======================================================= -->
-
-<section
-  id="apply"
-  class="pad"
-  style="
-    padding-top:clamp(80px,12vw,150px);
-    padding-bottom:clamp(80px,12vw,150px)
-  "
->
+     08 — FOUNDING BUILDINGS
+     ====================================================== -->
 
 
-  <div
-    class="two"
-    style="
-      max-width:1100px;
-      margin:0 auto;
-      gap:48px clamp(40px,6vw,96px)
-    "
-  >
+<section id="apply">
 
 
-    <div>
+  <div class="w apply-inner">
 
 
-      <div class="caps kick">
+    <div class="apply-copy">
+
+
+      <div
+        class="k"
+        style="color:var(--rust)"
+      >
         08 · FOUNDING BUILDINGS
       </div>
 
 
-      <h2
-        class="serif"
-        style="
-          font-size:clamp(44px,5.5vw,76px);
-          line-height:1;
-          margin:24px 0
-        "
-      >
-        Become a part of what we are building.
+      <h2>
+
+        Become a part of
+        what we are building.
+
       </h2>
 
 
-      <p
-        style="
-          margin:0;
-          color:#4E4A45;
-          max-width:420px
-        "
-      >
-        Livewells Clubs is in conversation with a small number
-        of towers for our flagship. Tell us who you are and
-        we'll be in touch personally.
+      <p>
+
+        Livewells Clubs is in conversation
+        with a small number of towers for our flagship.
+
+        Tell us who you are and we'll be in touch personally.
+
       </p>
 
 
@@ -2370,6 +3624,7 @@ const FORMS = {
         role="tablist"
       >
 
+
         <button
           role="tab"
           aria-selected="true"
@@ -2377,6 +3632,7 @@ const FORMS = {
         >
           MEMBER
         </button>
+
 
         <button
           role="tab"
@@ -2386,6 +3642,7 @@ const FORMS = {
           OWNER
         </button>
 
+
         <button
           role="tab"
           aria-selected="false"
@@ -2394,19 +3651,24 @@ const FORMS = {
           PARTNER
         </button>
 
+
       </div>
 
 
       <!-- MEMBER -->
+
 
       <div
         class="panel"
         data-panel="member"
       >
 
+
         <p>
-          For people who want to work, train,
-          recover and belong at the club.
+
+          For people who want to work,
+          train, recover and belong at the club.
+
         </p>
 
 
@@ -2414,17 +3676,15 @@ const FORMS = {
           class="btn"
           data-form="member"
           href="#apply"
-          target="_blank"
-          rel="noopener"
         >
           JOIN THE FOUNDING LIST
         </a>
 
 
         <span
-          class="caps"
+          class="k"
           style="
-            font-size:12px;
+            font-size:11px;
             color:#6B645B
           "
         >
@@ -2437,14 +3697,19 @@ const FORMS = {
 
       <!-- OWNER -->
 
+
       <div
         class="panel"
         data-panel="owner"
         hidden
       >
 
+
         <p>
-          For owners and developers of premium residential towers.
+
+          For owners and developers
+          of premium residential towers.
+
         </p>
 
 
@@ -2452,17 +3717,15 @@ const FORMS = {
           class="btn"
           data-form="owner"
           href="#apply"
-          target="_blank"
-          rel="noopener"
         >
           BOOK A WORKING SESSION
         </a>
 
 
         <span
-          class="caps"
+          class="k"
           style="
-            font-size:12px;
+            font-size:11px;
             color:#6B645B
           "
         >
@@ -2475,15 +3738,19 @@ const FORMS = {
 
       <!-- PARTNER -->
 
+
       <div
         class="panel"
         data-panel="partner"
         hidden
       >
 
+
         <p>
-          For makers in recovery, food, wine,
-          textiles and training.
+
+          For makers in recovery,
+          food, wine, textiles and training.
+
         </p>
 
 
@@ -2491,17 +3758,15 @@ const FORMS = {
           class="btn"
           data-form="partner"
           href="#apply"
-          target="_blank"
-          rel="noopener"
         >
           PARTNER INQUIRY
         </a>
 
 
         <span
-          class="caps"
+          class="k"
           style="
-            font-size:12px;
+            font-size:11px;
             color:#6B645B
           "
         >
@@ -2523,47 +3788,54 @@ const FORMS = {
 
 <!-- ======================================================
      FOOTER
-======================================================= -->
-
-<footer class="pad">
+     ====================================================== -->
 
 
-  <span style="font-size:15px">
-    LIVEWELLS™ CLUBS
-  </span>
+<footer>
 
 
-  <div
-    style="
-      display:flex;
-      gap:28px;
-      flex-wrap:wrap
-    "
-  >
-
-    <a
-      href="https://instagram.com/livewellsclubs"
-      target="_blank"
-      rel="noopener"
-    >
-      INSTAGRAM
-    </a>
+  <div class="w footer-inner">
 
 
-    <a
-      href="https://expeditions.livewells.org"
-      target="_blank"
-      rel="noopener"
-    >
-      EXPEDITIONS
-    </a>
+    <div class="k footer-left">
+      LIVEWELLS™ CLUBS
+    </div>
+
+
+    <div class="footer-center">
+
+
+      <a
+        class="k"
+        href="https://www.instagram.com/livewellsclubs/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        INSTAGRAM
+      </a>
+
+
+      <a
+        class="k"
+        href="https://expeditions.livewells.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        EXPEDITIONS
+      </a>
+
+
+    </div>
+
+
+    <div class="k footer-right">
+
+      © 2026 LIVEWELLS™ · ALL RIGHTS RESERVED
+
+    </div>
+
 
   </div>
-
-
-  <span style="color:#9C958A">
-    © 2026 LIVEWELLS™ · ALL RIGHTS RESERVED
-  </span>
 
 
 </footer>
@@ -2571,70 +3843,97 @@ const FORMS = {
 
 <!-- ======================================================
      JAVASCRIPT
-======================================================= -->
+     ====================================================== -->
+
 
 <script>
 
-/* FORM LINKS */
+
+/* =========================================================
+   FORM LINKS
+   ========================================================= */
+
 
 document
   .querySelectorAll('[data-form]')
-  .forEach(a => {
+  .forEach(link => {
+
 
     const url =
-      FORMS[a.dataset.form];
+      FORMS[link.dataset.form];
+
 
     if (
       url &&
       url !== '#'
     ) {
 
-      a.href = url;
 
-    } else {
+      link.href = url;
 
-      a.removeAttribute('target');
+      link.target = '_blank';
+
+      link.rel = 'noopener';
+
 
     }
+
 
   });
 
 
-/* APPLICATION TABS */
+/* =========================================================
+   APPLICATION TABS
+   ========================================================= */
+
 
 document
   .querySelectorAll('[data-tab]')
-  .forEach(b =>
+  .forEach(button => {
 
-    b.addEventListener(
+
+    button.addEventListener(
       'click',
       () => {
 
+
         document
           .querySelectorAll('[data-tab]')
-          .forEach(x =>
-            x.setAttribute(
+          .forEach(tab => {
+
+
+            tab.setAttribute(
               'aria-selected',
-              x === b
-            )
-          );
+              tab === button
+            );
+
+
+          });
 
 
         document
           .querySelectorAll('[data-panel]')
-          .forEach(p =>
-            p.hidden =
-              p.dataset.panel !==
-              b.dataset.tab
-          );
+          .forEach(panel => {
+
+
+            panel.hidden =
+              panel.dataset.panel !==
+              button.dataset.tab;
+
+
+          });
+
 
       }
-    )
+    );
 
-  );
+
+  });
+
 
 </script>
 
 
 </body>
+
 </html>
