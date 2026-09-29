@@ -1782,105 +1782,147 @@ footer a:hover {
   }
 
 
-  /* =====================================================
-     01 — HERO
-     MATCHES EXPEDITIONS MOBILE HEIGHT LOGIC
-     ===================================================== */
+ /* =====================================================
+   01 — HERO
+   MOBILE — MATCH EXPEDITIONS COVER PROPORTIONS
+   ===================================================== */
+
+#hero {
+
+  aspect-ratio: auto !important;
+
+  height: 100svh !important;
+  min-height: 680px !important;
+
+  overflow: hidden !important;
+
+}
 
 
-  #hero {
+/* IMAGE */
 
-    aspect-ratio: auto !important;
+#hero > img {
 
-    height: 100svh !important;
+  width: 100% !important;
+  height: 100% !important;
 
-    min-height: 720px !important;
+  object-fit: cover !important;
 
-  }
+  /*
+    Push the crop slightly right so the Austin skyline
+    and terrace remain the focal point.
+  */
+  object-position: 56% center !important;
 
-
-  #hero > img {
-
-    object-position: 55% center !important;
-
-  }
-
-
-  .hero-content {
-
-    padding:
-      120px
-      20px
-      42px !important;
-
-  }
+}
 
 
-  .hero-kicker {
+/* DARKER GRADIENT AT BOTTOM, CLEANER AT TOP */
 
-    margin-bottom: 22px;
+.hero-veil {
 
-  }
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20,20,18,.06) 0%,
+      rgba(20,20,18,.02) 28%,
+      rgba(20,20,18,.08) 48%,
+      rgba(20,20,18,.42) 72%,
+      rgba(20,20,18,.82) 100%
+    ) !important;
 
-
-  .hero-title {
-
-    font-size: clamp(52px, 15vw, 72px) !important;
-
-    line-height: .88 !important;
-
-    letter-spacing: -.015em !important;
-
-  }
-
-
-  .hero-title br {
-
-    display: none;
-
-  }
+}
 
 
-  .hero-intro {
+/* HERO CONTENT */
 
-    margin-top: 24px;
+.hero-content {
 
-    margin-bottom: 28px;
+  position: absolute !important;
 
-    max-width: 100%;
+  inset: 0 !important;
 
-    font-size: 17px !important;
+  padding:
+    120px
+    20px
+    42px !important;
 
-    line-height: 1.45 !important;
+  display: flex !important;
 
-  }
+  flex-direction: column !important;
 
+  justify-content: flex-end !important;
 
-  .hero-intro br {
-
-    display: none;
-
-  }
-
-
-  .hero-ctas {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 20px;
-
-  }
+}
 
 
-  .hero-ctas .btn {
+/* LOWER CONTENT */
 
-    width: 100%;
+.hero-lower {
 
-  }
+  width: 100% !important;
+
+}
+
+
+/* SMALL INTRO LINE */
+
+.hero-kicker {
+
+  margin: 0 0 18px 0 !important;
+
+  font-size: 11px !important;
+
+  letter-spacing: .30em !important;
+
+}
+
+
+/* MAIN HEADLINE */
+
+.hero-title {
+
+  margin: 0 !important;
+
+  max-width: 100% !important;
+
+  font-size: clamp(48px, 13vw, 62px) !important;
+
+  line-height: .88 !important;
+
+  letter-spacing: -.015em !important;
+
+}
+
+
+/*
+  Allow the wording to wrap naturally on mobile.
+  Do not force the desktop line break.
+*/
+
+.hero-title br {
+
+  display: none !important;
+
+}
+
+
+/* HIDE SUPPORTING COPY ON THE COVER */
+
+.hero-intro {
+
+  display: none !important;
+
+}
+
+
+/* HIDE HERO BUTTONS ON THE COVER */
+
+.hero-ctas {
+
+  display: none !important;
+
+}
 
 
   /* =====================================================
