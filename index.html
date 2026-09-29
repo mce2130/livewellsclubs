@@ -416,14 +416,19 @@ nav a:hover {
   inset: 0;
 
   width: 100%;
-
   height: 100%;
-
-  max-width: none;
 
   object-fit: cover;
 
-  object-position: center center;
+  /*
+    Crop the unwanted black-and-white strip
+    from the bottom of the source image.
+  */
+  object-position: center top;
+
+  transform: scale(1.025);
+
+  transform-origin: center top;
 
 }
 
