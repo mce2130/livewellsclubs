@@ -426,7 +426,7 @@ nav a:hover {
   */
   object-position: center top;
 
-  transform: scale(1.025);
+  transform: scale(1.07);
 
   transform-origin: center top;
 
@@ -1046,9 +1046,7 @@ nav a:hover {
   object-position: 50% 68%;
 
 }
-
-
-.member-list {
+  .member-list {
 
   display: flex;
 
@@ -1188,17 +1186,15 @@ nav a:hover {
   position: absolute;
 
   left: 0;
+
   top: 0;
 
   width: 100%;
 
-  /* Make image slightly taller than its frame */
   height: 104%;
 
   object-fit: cover;
 
-  /* Anchor image to the top so the unwanted
-     black-and-white strip falls below the frame */
   object-position: center top;
 
   transform: none;
@@ -1462,7 +1458,6 @@ nav a:hover {
 
   gap: clamp(60px, 9vw, 140px);
 
-  /* Align Section 08 with Sections 01–07 */
   width: 100%;
 
   max-width: none;
@@ -1696,70 +1691,59 @@ footer a:hover {
 }
 
 
-/* =====================================================
-   MOBILE NAV — CLEANER, LIKE EXPEDITIONS
-   ===================================================== */
-
-nav {
-
-  padding-top: 34px !important;
-
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-
-  align-items: center !important;
-
-}
+/* =========================================================
+   MOBILE
+   SAME BREAKPOINT AS EXPEDITIONS
+   ========================================================= */
 
 
-nav .brand {
-
-  font-size: 11px !important;
-
-  letter-spacing: .30em !important;
-
-}
+@media (max-width: 760px) {
 
 
-nav .links {
+  html,
+  body {
 
-  display: flex !important;
+    width: 100%;
 
-}
+    max-width: 100%;
 
+    overflow-x: hidden;
 
-nav .links a:not(.apply) {
-
-  display: none !important;
-
-}
+  }
 
 
-nav .apply {
-
-  padding: 8px 12px !important;
-
-  font-size: 10px !important;
-
-  letter-spacing: .25em !important;
-
-}
-
-
-  /* =====================================================
-     NAV
-     ===================================================== */
-
-
-  nav {
-
-    padding-top: 22px;
+  .w {
 
     padding-left: 20px;
 
     padding-right: 20px;
 
+  }
+
+
+  body {
+
+    font-size: 16px;
+
+  }
+
+
+  /* =====================================================
+     MOBILE NAV
+     ===================================================== */
+
+
+  nav {
+
+    padding-top: 22px !important;
+
+    padding-left: 20px !important;
+
+    padding-right: 20px !important;
+
     flex-wrap: nowrap;
+
+    align-items: center;
 
   }
 
@@ -1774,6 +1758,8 @@ nav .apply {
 
 
   nav .links {
+
+    display: flex;
 
     gap: 0;
 
@@ -1800,147 +1786,169 @@ nav .apply {
   }
 
 
- /* =====================================================
-   01 — HERO
-   MOBILE — MATCH EXPEDITIONS COVER PROPORTIONS
-   ===================================================== */
-
-#hero {
-
-  aspect-ratio: auto !important;
-
-  height: 100svh !important;
-  min-height: 680px !important;
-
-  overflow: hidden !important;
-
-}
+  /* =====================================================
+     01 — HERO
+     MOBILE — SAME COVER PRINCIPLE AS EXPEDITIONS
+     ===================================================== */
 
 
-/* IMAGE */
+  #hero {
 
-#hero > img {
+    aspect-ratio: auto;
 
-  width: 100% !important;
-  height: 100% !important;
+    width: 100%;
 
-  object-fit: cover !important;
+    height: auto;
 
-  /*
-    Push the crop slightly right so the Austin skyline
-    and terrace remain the focal point.
-  */
-  object-position: 56% center !important;
+    min-height: 0;
 
-}
+    overflow: hidden;
+
+  }
 
 
-/* DARKER GRADIENT AT BOTTOM, CLEANER AT TOP */
+  #hero > img {
 
-.hero-veil {
+    position: absolute;
 
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(20,20,18,.06) 0%,
-      rgba(20,20,18,.02) 28%,
-      rgba(20,20,18,.08) 48%,
-      rgba(20,20,18,.42) 72%,
-      rgba(20,20,18,.82) 100%
-    ) !important;
+    inset: 0;
 
-}
+    width: 100%;
 
+    height: 100%;
 
-/* HERO CONTENT */
+    object-fit: cover;
 
-.hero-content {
+    object-position: 56% top;
 
-  position: absolute !important;
+    transform: scale(1.07);
 
-  inset: 0 !important;
+    transform-origin: center top;
 
-  padding:
-    120px
-    20px
-    42px !important;
-
-  display: flex !important;
-
-  flex-direction: column !important;
-
-  justify-content: flex-end !important;
-
-}
+  }
 
 
-/* LOWER CONTENT */
+  .hero-veil {
 
-.hero-lower {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(20,20,18,.08) 0%,
+        rgba(20,20,18,.02) 24%,
+        rgba(20,20,18,.10) 44%,
+        rgba(20,20,18,.40) 70%,
+        rgba(20,20,18,.82) 100%
+      );
 
-  width: 100% !important;
-
-}
-
-
-/* SMALL INTRO LINE */
-
-.hero-kicker {
-
-  margin: 0 0 18px 0 !important;
-
-  font-size: 11px !important;
-
-  letter-spacing: .30em !important;
-
-}
+  }
 
 
-/* MAIN HEADLINE */
+  .hero-content {
 
-.hero-title {
+    position: relative;
 
-  margin: 0 !important;
+    inset: auto;
 
-  max-width: 100% !important;
+    width: 100%;
 
-  font-size: clamp(48px, 13vw, 62px) !important;
+    min-height: 100svh;
 
-  line-height: .88 !important;
+    padding:
+      150px
+      20px
+      46px;
 
-  letter-spacing: -.015em !important;
+    display: flex;
 
-}
+    flex-direction: column;
 
+    justify-content: flex-end;
 
-/*
-  Allow the wording to wrap naturally on mobile.
-  Do not force the desktop line break.
-*/
-
-.hero-title br {
-
-  display: none !important;
-
-}
+  }
 
 
-/* HIDE SUPPORTING COPY ON THE COVER */
+  .hero-lower {
 
-.hero-intro {
+    width: 100%;
 
-  display: none !important;
-
-}
+  }
 
 
-/* HIDE HERO BUTTONS ON THE COVER */
+  .hero-kicker {
 
-.hero-ctas {
+    margin: 0 0 18px;
 
-  display: none !important;
+    font-size: 11px;
 
-}
+    letter-spacing: .30em;
+
+  }
+
+
+  .hero-title {
+
+    margin: 0;
+
+    max-width: 100%;
+
+    font-size: clamp(46px, 12.5vw, 60px);
+
+    line-height: .89;
+
+    letter-spacing: -.015em;
+
+  }
+
+
+  .hero-title br {
+
+    display: none;
+
+  }
+
+
+  .hero-intro {
+
+    display: block;
+
+    margin: 24px 0 26px;
+
+    max-width: 100%;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: rgba(244,239,231,.94);
+
+  }
+
+
+  .hero-ctas {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 18px;
+
+  }
+
+
+  .hero-ctas .btn {
+
+    width: 100%;
+
+  }
+
+
+  .hero-ctas .line-link {
+
+    width: max-content;
+
+  }
 
 
   /* =====================================================
@@ -1995,8 +2003,6 @@ nav .apply {
 
   /* =====================================================
      03 — CLUB
-     SAME COMPACT TWO-COLUMN MOBILE IMAGE LOGIC
-     AS EXPEDITIONS
      ===================================================== */
 
 
@@ -2022,6 +2028,14 @@ nav .apply {
     gap: 28px 14px !important;
 
     width: 100% !important;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding-left: 20px;
+
+    padding-right: 20px;
 
     padding-bottom: 82px;
 
@@ -2330,7 +2344,9 @@ nav .apply {
 
   .partnership-photo img {
 
-    object-position: center center;
+    height: 104%;
+
+    object-position: center top;
 
   }
 
@@ -2378,9 +2394,7 @@ nav .apply {
     gap: 32px;
 
   }
-
-
-  /* =====================================================
+    /* =====================================================
      06 / 07
      ===================================================== */
 
@@ -2422,6 +2436,14 @@ nav .apply {
 
     gap: 48px;
 
+    width: 100%;
+
+    max-width: none;
+
+    margin-left: 0;
+
+    margin-right: 0;
+
     padding-top: 72px;
 
     padding-bottom: 82px;
@@ -2458,7 +2480,6 @@ nav .apply {
 
   /* =====================================================
      FOOTER
-     MATCHES EXPEDITIONS MOBILE FOOTER STRUCTURE
      ===================================================== */
 
 
@@ -2534,7 +2555,25 @@ nav .apply {
 
   .hero-title {
 
-    font-size: clamp(48px, 14.5vw, 62px) !important;
+    font-size: clamp(44px, 12vw, 54px);
+
+  }
+
+
+  .hero-content {
+
+    padding-left: 18px;
+
+    padding-right: 18px;
+
+    padding-bottom: 38px;
+
+  }
+
+
+  .hero-intro {
+
+    font-size: 15px;
 
   }
 
@@ -2542,6 +2581,10 @@ nav .apply {
   .rooms {
 
     gap: 26px 12px !important;
+
+    padding-left: 18px;
+
+    padding-right: 18px;
 
   }
 
@@ -2562,6 +2605,7 @@ nav .apply {
   }
 
 }
+
 
 </style>
 
@@ -2825,7 +2869,7 @@ const FORMS = {
   </div>
 
 
-  <div class="w content-width rooms">
+  <div class="rooms">
 
 
     <!-- THE DESK -->
@@ -3332,8 +3376,6 @@ const FORMS = {
 
 
 </section>
-
-
 <!-- ======================================================
      05 — THE PARTNERSHIP
      ====================================================== -->
