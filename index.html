@@ -2220,8 +2220,14 @@ transform: scale(1.07);
 
   }
 
-  .membership-title em {
+ .membership-title .belong {
+    display: block;
     font-style: normal;
+}
+
+.membership-title em {
+    display: block;
+    font-style: italic;
 }
 
   .membership-intro {
@@ -3214,13 +3220,12 @@ const FORMS = {
 
     <h2 class="membership-title">
 
-      Join the club<br>
+  Join the club<br>
 
-      <em>
-        Belong to something more.
-      </em>
+  <span class="belong">Belong to</span>
+  <em>something more.</em>
 
-    </h2>
+</h2>
 
 
     <div class="membership-intro">
